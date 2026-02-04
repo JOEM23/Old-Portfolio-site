@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style2.css"/>
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+	<div class="topnav" id="myTopnav">
+		<a href="index.html" class="active">Home</a>
+		<a href="About.html" class="active">About</a>
+		<li><a href="progress.html">Projects</a></li>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		  <i class="fa fa-bars"></i>
+		</a>
+	  </div>
+    <style>
+        
+    
+body {
+	margin:0;
+	font-family: 'Roboto Condensed', sans-serif;
+	
+}
+
+ 
+h1 {
+	 	  
+	color:#d29b4e;
+	font-weight:700;
+	font-size: 60px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	margin-top:50px;	 
+	text-align:center;
+	text-transform:uppercase;
+	letter-spacing:4px;
+	line-height:23px;
+}
+
+/* --- Start progress bar --- */
+
+.process-wrapper {
+	margin:auto;
+	max-width:1080px;
+}
+
+#progress-bar-container {
+	position:relative;
+	width:90%;
+	margin:auto;
+	height:100px;
+	margin-top:65px;
+}
+
+#progress-bar-container ul {
+	padding:0;
+	margin:0;
+	padding-top:15px;
+	z-index:9999;
+	position:absolute;
+	width:100%;
+	margin-top:-40px
+}
+
+#progress-bar-container li:before {
+	content:" ";
+	display:block;
+	margin:auto;
+	width:30px;
+	height:30px;
+	border-radius:50%;
+	border:solid 2px #aaa;
+	transition:all ease 0.3s;
+     
+}
+
+#progress-bar-container li.active:before, #progress-bar-container li:hover:before {
+	border:solid 2px #fff;
+       	 
+	background: linear-gradient(to right, #1edce9 0%,#fff 100%); 
+}
+
+#progress-bar-container li {
+	list-style:none;
+	float:left;
+	width:20%;
+	text-align:center;
+	color:#aaa;
+	text-transform:uppercase;
+	font-size:11px;
+	cursor:pointer;
+	font-weight:700;
+	transition:all ease 0.2s;
+	vertical-align:bottom;
+	height:60px;
+	position:relative;
+}
+
+#progress-bar-container li .step-inner {
+	position:absolute;
+	width:100%;
+	bottom:0;
+    font-size: 14px;
+}
+
+#progress-bar-container li.active, #progress-bar-container li:hover {
+	color:#e4ac5d;
+}
+
+#progress-bar-container li:after {
+	content:" ";
+	display:block;
+	width:6px;
+	height:6px;
+	background:#777;
+	margin:auto;
+	border:solid 7px #fff;
+	border-radius:50%;
+	margin-top:40px;
+	box-shadow:0 2px 13px -1px rgba(0,0,0,0.3);
+	transition:all ease 0.2s;
+     
+}
+
+#progress-bar-container li:hover:after {
+	background:#9d7f56;
+}
+
+#progress-bar-container li.active:after {
+	background:#9d7f56;
+}
+
+#progress-bar-container #line {
+	width:80%;
+	margin:auto;
+	background: #eee;
+	height:6px;
+	position:absolute;
+	left:10%;
+	top:57px;
+	z-index:1;
+	border-radius:50px;
+	transition:all ease 0.9s;
+}
+
+#progress-bar-container #line-progress {
+	content:" ";
+	width:3%;
+	height:100%;
+	background: #08e1e8;	 
+	background: linear-gradient(to right, #08f8cc 0%,#2ea3b7 100%); 
+	position:absolute;
+	z-index:2;
+	border-radius:50px;
+	transition:all ease 0.9s;
+}
+
+#progress-content-section {
+	width:97%;
+	margin: auto;
+	background: #f3f3f3;
+	border-radius: 90px;
+}
+
+#progress-content-section .section-content {
+	padding:30px 40px;
+	text-align:;
+}
+
+#progress-content-section .section-content h2 {
+	font-size:85px;
+	text-transform:uppercase;
+	color:#c3a478;
+	letter-spacing:5px;
+	text-align: center;
+}
+
+#progress-content-section .section-content p {
+	font-size:16px;
+	line-height:1.8em;
+	color:#777;
+}
+
+#progress-content-section .section-content {
+	display:none;
+	animation: FadeInUp 700ms ease 1;
+	animation-fill-mode:forwards;
+	transform:translateY(15px);
+	opacity:0;
+}
+
+#progress-content-section .section-content.active {
+	display:block;
+}
+
+@keyframes FadeInUp {
+	0% {
+		transform:translateY(15px);
+		opacity:0;
+	}
+	
+	100% {
+		transform:translateY(0px);
+		opacity:1;
+	}
+}
+
+ 
+    </style>
+</head>
+<body>
+ 
+
+<h1>Projects</h1>
+<br> 
+<div class="process-wrapper">
+<div id="progress-bar-container">
+	<ul>
+		<li class="step step01 active"><div class="step-inner">Video</div></li>
+		<li class="step step02"><div class="step-inner">Apps</div></li>
+		<li class="step step03"><div class="step-inner">interactive space</div></li>
+		<li class="step step04"><div class="step-inner">Blog </div></li>
+		<li class="step step05"><div class="step-inner">About me</div></li>
+	</ul>
+	
+	<div id="line">
+		<div id="line-progress"></div>
+	</div>
+</div>
+
+<div id="progress-content-section">
+	<div class="section-content discovery active">
+		<h2>Video</h2>
+		<div class="vidpreview">
+		<iframe width="600" height="355" src="https://www.youtube.com/embed/49xLf5R8SjY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<br></br>
+		<p1>
+			In this project I had to re-edit an original video into a new one with my chosen theme of horror and mystery. My primary aesthetics were suspenseful, thought provoking and thrilling that would help establish my theme.
+		</p1>
+		<br><br>
+		<div class="row">
+			<div class="column">
+			  <img src="img/DV_6 (3).jpg" alt="Snow" style="width:100%">
+			</div>
+			<div class="column">
+			  <img src="img/DV_4 (3).jpg" alt="Forest" style="width:100%">
+			</div>
+			<div class="column">
+			  <img src="img/DV_5 (3).jpg" alt="Mountains" style="width:100%">
+			</div>
+		  </div>
+		<img src="img/DV_1.png" style="width:400px">
+		<br></br>
+		<p2>
+			I decided to choose these as I wanted to approach the polar opposite of the original video.I first approached this by trying to manipulate the overall feel through sonic components
+Cutting the visual components in order to rearrange it into creating a story/scene
+Screenshot random parts of the footage and rearranged them in a storyboard trying to make a flowing scene.
+		</p2>
+		<br><br>
+		<div class="row">
+            <div class="col-50">
+             <img src="img/DV_7 (2).jpg" style="width:400px; padding:10px; max-width: 100%;">
+            </div>
+            <div class="col-50">
+                <img src="img/DV_3 (2).jpg" style="width:400px; padding:10px; max-width: 100%;">
+            </div>
+         </div>
+		<br><br>
+		<p3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
+		</p3>
+		<br><br>
+		<img src="img/DV_2.jpg" style="width:400px; max-width: 100%;">
+		<p4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
+		</p4>
+
+		
+		
+	</div>
+	
+	<div class="section-content strategy">
+		<h2>Apps</h2>
+		<p>For this porject I created a set of icons which
+			under the theme of community. 
+			The main ideas were creating icons of a spider community with 
+			each spider having their own profession.
+			 The main theme was monsters/arthropods 
+			 and the community where I choose spiders 
+			 due to the multitude of types of spiders. 
+			 This led me to go with idea of a spider 
+			 community each with different jobs.</p>
+		<br><br>
+		<img src="img/app_1.jpg" style="width:600px">
+		<br><br>
+		<p>Throughout working on the project there were various changes to my icons which begun with a series of thumbnail sketches. For the nine icons I decided to create a business, artist, buff/body builder, miner, fitness, disco/dj, sailor, chef, and snow ski icon spiders. In these sketches I went through a series of iterations and decided to go for the simplistic icon as I believed that it would make it stand out better whilst still displaying the spiders occupations in a half face, half object icon style. </p>
+		<br><br>
+		<img src="img/cir.png">
+		<br><br>
+		Whilst this icon did indeed stand out there were compromises made when translating the sketches over such as removing the legs of the spider. This led to the spider losing it’s main representation and made it look more like a regular monster rather than a spider. 
+		<br><br>
+		<img src="img/app_2.jpg" style="width:600px">
+		<br><br>
+		<p>For the colour palette I found that that the monochromatic and the shade colour schemes better suite my icons, however the analogous colour scheme created a nice subtle contrast making it stand out better. For the icons I believe that using the 'complementary' and 'shades' colour schemes work best as it gives a sense of unity for the icons but also gives an overall more softer appearance, which is also accompanied by using cool and warm colours. I found that having a split colour pallet did not work as well particularly for the sailor  icon as it made it look to jarring and created too much contrast.</p>
+		<img src="img/app_3.jpg" style="width:600px">
+		<p>
+			The use of sound complimented the objects of the occupations where the use of sound would give a sense that an action was occurring in the stationary icon. This corrosepend=ed with the use of contrast and scale within my work which made the items of the occupations stand out. 
+			</p>
+
+
+	</div>
+	
+	<div class="section-content creative">
+		<h2>interactive space</h2>
+		<p>A working prototype was extremely important in my design process as it allowed me have others trial my virtual environment and give me feedback to further improve my work. Furthermore it allowed me to see how the environment ran and see whether it reflected my own experiences and intentions.</p>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/gHQi1ymiQT4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<p>
+			A working prototype was extremely important in my design process as it allowed me have others trial my virtual environment and give me feedback to further improve my work. Furthermore it allowed me to see how the environment ran and see whether it reflected my own experiences and intentions.
+		</p>
+		<br><br>
+
+		<p>
+			Creating a three-dimensional environment compared to a two-dimensional project proven to be a challenge to me. Designing on a three-dimensional plan made me think about how use of sound, sight and inputs would best work in order to best convey my ideas. Unlike a two-dimensional plane where visual representation is important using unity had me plan out various interaction elements such as signifiers, indicators and mapping which would help create a richer experience. 
+		</p>
+		<br><br>
+
+		<p>
+			The role of the virtual camera was extremely important as it help depict what was happening in the scene. Whilst similar to the camera of the first assignment, where it was used to visually depict a story, thisa virtual camera allowed the user to actually look around the scene in order to gain more understanding of what is actually happening. 
+		</p>
+		<br><br>
+
+		<p>
+			To incorporate different elements into themes I decided to split my space under two themes with one being tranquillity and the other being a stressful aesthetic. In order to create the stressful kitchen theme I decided to rearrange items in the kitchen in a disorderly fashion and utilising red light to emulate the idea of stress and anger. Compared to the cafe dining area, items were placed in to create a sense of unity which gave a sense of order and peace. I further added natural lighting in order to add to the sense of tranquillity. 
+		<br><br>
+		
+		<p>
+			Sound was just as important as the visual elements within my virtual environment as it helped establish the environment but also helped create a sense that the user is indeed moving the space through audio being played along with interactions. Similar to the use of audio in both assignment 1 and 2, sound was also used to enhance the visual components but however also acted as a way of mapping and leading the users throughout the virtual space.
+
+	
+	</div>
+	
+	<div class="section-content production">
+		<h2>website</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
+	</div>
+	
+	<div class="section-content analysis">
+		<h2></h2>
+		<p>Hello!</p>
+		<p>I am a digital media designer </p>
+	</div>
+	</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+ <script>
+    
+    $(".step").click( function() {
+	$(this).addClass("active").prevAll().addClass("active");
+	$(this).nextAll().removeClass("active");
+});
+
+$(".step01").click( function() {
+	$("#line-progress").css("width", "3%");
+	$(".discovery").addClass("active").siblings().removeClass("active");
+});
+
+$(".step02").click( function() {
+	$("#line-progress").css("width", "25%");
+	$(".strategy").addClass("active").siblings().removeClass("active");
+});
+
+$(".step03").click( function() {
+	$("#line-progress").css("width", "50%");
+	$(".creative").addClass("active").siblings().removeClass("active");
+});
+
+$(".step04").click( function() {
+	$("#line-progress").css("width", "75%");
+	$(".production").addClass("active").siblings().removeClass("active");
+});
+
+$(".step05").click( function() {
+	$("#line-progress").css("width", "100%");
+	$(".analysis").addClass("active").siblings().removeClass("active");
+});
+
+ 
+    </script>
+</body>
+</html>
